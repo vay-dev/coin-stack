@@ -25,7 +25,26 @@ SECRET_KEY = 'django-insecure-x$6trm29nxfc*1s!%9n!zz02ttx^-&8*_#pxg!gwlurbvp#zsr
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["localhost"]
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5174",
+    "http://localhost:5173",
+]
+
+CORS_ALLOW_CREDENTIALS = True
+
+# CSRF settings for cross-origin requests
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:5173",
+    "http://localhost:5174",
+]
+
+# Session cookie settings
+SESSION_COOKIE_SAMESITE = 'Lax'
+SESSION_COOKIE_HTTPONLY = True
+CSRF_COOKIE_SAMESITE = 'Lax'
+CSRF_COOKIE_HTTPONLY = False  # Must be False so JavaScript can read it
 
 
 # Application definition
@@ -41,6 +60,7 @@ INSTALLED_APPS = [
     'crypto',
     'rest_framework',
     'users',
+    'corsheaders'
 ]
 
 # rest framework configurations
@@ -56,15 +76,15 @@ REST_FRAMEWORK = {
 
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",  # CORS must be first
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
+    'django.middleware.common.CommonMiddleware',  # Only once!
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
 ROOT_URLCONF = 'core.urls'
 
 TEMPLATES = [

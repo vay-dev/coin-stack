@@ -1,0 +1,70 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "buy": "Comprar Crypto",
+    "settings": "Configuración",
+    "login": "Iniciar Sesión",
+    "register": "Registrarse",
+    "logout": "Cerrar Sesión"
+  },
+  "auth": {
+    "loginTitle": "Iniciar Sesión en tu Cuenta",
+    "registerTitle": "Crear Nueva Cuenta",
+    "username": "Nombre de Usuario",
+    "email": "Correo Electrónico",
+    "password": "Contraseña",
+    "loginButton": "Iniciar Sesión",
+    "registerButton": "Registrarse",
+    "noAccount": "¿No tienes una cuenta?",
+    "haveAccount": "¿Ya tienes una cuenta?",
+    "registerLink": "Regístrate aquí",
+    "loginLink": "Inicia sesión aquí"
+  },
+  "crypto": {
+    "title": "Mercado de Criptomonedas",
+    "rank": "Rango",
+    "name": "Nombre",
+    "price": "Precio",
+    "marketCap": "Cap. de Mercado",
+    "change24h": "Cambio 24h",
+    "buy": "Comprar",
+    "details": "Detalles",
+    "circulating": "Suministro Circulante",
+    "maxSupply": "Suministro Máximo",
+    "totalSupply": "Suministro Total"
+  },
+  "buy": {
+    "title": "Comprar Criptomoneda",
+    "selectCrypto": "Seleccionar Criptomoneda",
+    "quantity": "Cantidad",
+    "totalAmount": "Monto Total",
+    "buyButton": "Proceder al Pago",
+    "success": "Redirigiendo al pago...",
+    "error": "Error al procesar la compra"
+  },
+  "settings": {
+    "title": "Configuración",
+    "appearance": "Apariencia",
+    "language": "Idioma",
+    "theme": "Tema",
+    "lightMode": "Modo Claro",
+    "darkMode": "Modo Oscuro",
+    "systemMode": "Sistema",
+    "notifications": "Notificaciones",
+    "emailNotifications": "Notificaciones por Email",
+    "pushNotifications": "Notificaciones Push",
+    "priceAlerts": "Alertas de Precio",
+    "account": "Cuenta",
+    "profile": "Perfil",
+    "security": "Seguridad",
+    "privacy": "Privacidad"
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Ocurrió un error",
+    "success": "¡Éxito!",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "search": "Buscar..."
+  }
+}

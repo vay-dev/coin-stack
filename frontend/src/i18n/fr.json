@@ -1,0 +1,70 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "buy": "Acheter Crypto",
+    "settings": "Paramètres",
+    "login": "Connexion",
+    "register": "S'inscrire",
+    "logout": "Déconnexion"
+  },
+  "auth": {
+    "loginTitle": "Connectez-vous à votre compte",
+    "registerTitle": "Créer un nouveau compte",
+    "username": "Nom d'utilisateur",
+    "email": "Email",
+    "password": "Mot de passe",
+    "loginButton": "Connexion",
+    "registerButton": "S'inscrire",
+    "noAccount": "Vous n'avez pas de compte?",
+    "haveAccount": "Vous avez déjà un compte?",
+    "registerLink": "Inscrivez-vous ici",
+    "loginLink": "Connectez-vous ici"
+  },
+  "crypto": {
+    "title": "Marché des Cryptomonnaies",
+    "rank": "Rang",
+    "name": "Nom",
+    "price": "Prix",
+    "marketCap": "Cap. Boursière",
+    "change24h": "Change 24h",
+    "buy": "Acheter",
+    "details": "Détails",
+    "circulating": "Offre en Circulation",
+    "maxSupply": "Offre Maximale",
+    "totalSupply": "Offre Totale"
+  },
+  "buy": {
+    "title": "Acheter Cryptomonnaie",
+    "selectCrypto": "Sélectionner Cryptomonnaie",
+    "quantity": "Quantité",
+    "totalAmount": "Montant Total",
+    "buyButton": "Procéder au Paiement",
+    "success": "Redirection vers le paiement...",
+    "error": "Échec du traitement de l'achat"
+  },
+  "settings": {
+    "title": "Paramètres",
+    "appearance": "Apparence",
+    "language": "Langue",
+    "theme": "Thème",
+    "lightMode": "Mode Clair",
+    "darkMode": "Mode Sombre",
+    "systemMode": "Système",
+    "notifications": "Notifications",
+    "emailNotifications": "Notifications par Email",
+    "pushNotifications": "Notifications Push",
+    "priceAlerts": "Alertes de Prix",
+    "account": "Compte",
+    "profile": "Profil",
+    "security": "Sécurité",
+    "privacy": "Confidentialité"
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Une erreur s'est produite",
+    "success": "Succès!",
+    "cancel": "Annuler",
+    "save": "Sauvegarder",
+    "search": "Rechercher..."
+  }
+}

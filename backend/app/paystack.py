@@ -19,18 +19,24 @@ def make_payment(email, amount):
 
         data = {
             "email": email,
-            "amount": amount * 100
+            "amount": int(amount * 100),  # Convert to kobo and ensure integer
+            "callback_url": "http://localhost:5173/payment-success"  # Add callback URL
         }
 
         response = requests.post(url, headers=headers, data=json.dumps(data))
-        if response.status_code == 200:
-            data = response.json()
-            url = data['data']['authorization_url']
-            reference = data['data']['reference']
+        response_data = response.json()
+
+        if response.status_code == 200 and response_data.get('status'):
+            authorization_url = response_data['data']['authorization_url']
+            reference = response_data['data']['reference']
             return {
-                "url": url,
+                "url": authorization_url,
                 "reference": reference
             }
-        return response.json()
+        else:
+            # Return error from Paystack
+            error_message = response_data.get('message', 'Payment initialization failed')
+            raise ValueError(f"Paystack error: {error_message}")
     except Exception as error:
-        raise ValueError(error)
+        print(f"Payment error: {error}")  # Log for debugging
+        raise ValueError(f"Payment processing error: {str(error)}")

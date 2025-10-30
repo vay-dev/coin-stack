@@ -1,73 +1,169 @@
-# React + TypeScript + Vite
+# CryptoHub Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Modern React + TypeScript frontend for cryptocurrency trading platform with Paystack integration.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🌗 **Dark Mode** - Fully functional dark/light theme with system preference detection
+- 🌍 **Multi-language Support** - English, Spanish, and French translations
+- 💳 **Paystack Integration** - Secure cryptocurrency purchases
+- 🎨 **Beautiful UI** - Modern design with Tailwind CSS and smooth animations
+- 📱 **Responsive** - Works perfectly on all devices
+- ⚡ **Fast** - Built with Vite for lightning-fast development
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React 19** - Latest React with TypeScript
+- **Vite** - Next-generation frontend tooling
+- **Tailwind CSS** - Utility-first CSS framework
+- **Zustand** - Lightweight state management
+- **React Router** - Client-side routing
+- **Axios** - HTTP client
+- **i18next** - Internationalization
+- **Lucide React** - Beautiful icons
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Node.js 18+ installed
+- Backend server running on `http://localhost:8000`
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Installation
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1. Install dependencies:
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2. Start the development server:
+```bash
+npm run dev
 ```
+
+3. Open your browser to `http://localhost:5173`
+
+## Available Pages
+
+- **Home** (`/`) - Browse and search cryptocurrencies
+- **Login** (`/login`) - User authentication
+- **Register** (`/register`) - Create new account
+- **Buy** (`/buy`) - Purchase cryptocurrency with Paystack
+- **Settings** (`/settings`) - Manage theme, language, and preferences
+
+## Features in Detail
+
+### Dark Mode
+- Three modes: Light, Dark, and System
+- Smooth transitions between themes
+- Persists user preference in localStorage
+
+### Language Support
+- English (🇺🇸)
+- Spanish (🇪🇸)
+- French (🇫🇷)
+- Easy to add more languages
+
+### Payment Integration
+- Integrated with Paystack payment gateway
+- Secure transaction processing
+- Automatic redirect to payment page
+- Support for Nigerian Naira (NGN)
+
+### Settings
+- Theme switcher (Light/Dark/System)
+- Language selector
+- Notification preferences
+- Account management options
+
+## Project Structure
+
+```
+src/
+├── components/
+│   └── layout/
+│       ├── Header.tsx       # Navigation header
+│       └── Layout.tsx       # Main layout wrapper
+├── pages/
+│   ├── Home.tsx            # Crypto listing page
+│   ├── Login.tsx           # Login page
+│   ├── Register.tsx        # Registration page
+│   ├── Buy.tsx             # Purchase page
+│   └── Settings.tsx        # Settings page
+├── services/
+│   ├── api.ts              # Axios configuration
+│   ├── auth.ts             # Authentication API
+│   └── crypto.ts           # Cryptocurrency API
+├── store/
+│   ├── useAuthStore.ts     # Auth state management
+│   └── useThemeStore.ts    # Theme state management
+├── types/
+│   ├── crypto.ts           # Crypto type definitions
+│   └── user.ts             # User type definitions
+├── i18n/
+│   ├── en.json             # English translations
+│   ├── es.json             # Spanish translations
+│   ├── fr.json             # French translations
+│   └── index.ts            # i18n configuration
+└── utils/
+    ├── cn.ts               # Class name utility
+    └── format.ts           # Formatting utilities
+```
+
+## Backend Configuration
+
+The frontend expects the backend API to be running at `http://localhost:8000`.
+
+### Required Backend Endpoints
+
+- `POST /api/auth/register/` - User registration
+- `POST /api/auth/login/` - User login
+- `POST /api/auth/logout/` - User logout
+- `GET /api/cryptos/` - List cryptocurrencies
+- `GET /api/cryptos/:id/` - Get crypto details
+- `POST /api/cryptos/buy/` - Purchase cryptocurrency
+
+### CORS Configuration
+
+The backend needs to allow CORS from `http://localhost:5173`. Add to Django settings:
+
+```python
+# Install django-cors-headers first
+pip install django-cors-headers
+
+# In settings.py
+INSTALLED_APPS = [
+    ...
+    'corsheaders',
+]
+
+MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    ...
+]
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+]
+
+CORS_ALLOW_CREDENTIALS = True
+```
+
+## Build for Production
+
+```bash
+npm run build
+```
+
+The built files will be in the `dist/` directory.
+
+## Development Tips
+
+- Use the browser DevTools to test dark mode
+- Test different languages in Settings
+- Check Network tab for API calls
+- The app uses session-based authentication with cookies
+
+## License
+
+MIT

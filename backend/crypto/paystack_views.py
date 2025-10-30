@@ -18,7 +18,11 @@ class CryptoBuyView(APIView):
             return Response({"error": "Coin not found"}, status=status.HTTP_404_NOT_FOUND)
 
         amount = coin.price_ngn * quantity
+
+        # Get user email, use a default if not provided
         email = request.user.email
+        if not email:
+            email = f"{request.user.username}@example.com"
 
         try:
             data = make_payment(email=email, amount=amount)

@@ -1,0 +1,70 @@
+{
+  "nav": {
+    "home": "Home",
+    "buy": "Buy Crypto",
+    "settings": "Settings",
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout"
+  },
+  "auth": {
+    "loginTitle": "Login to Your Account",
+    "registerTitle": "Create New Account",
+    "username": "Username",
+    "email": "Email",
+    "password": "Password",
+    "loginButton": "Login",
+    "registerButton": "Register",
+    "noAccount": "Don't have an account?",
+    "haveAccount": "Already have an account?",
+    "registerLink": "Register here",
+    "loginLink": "Login here"
+  },
+  "crypto": {
+    "title": "Cryptocurrency Market",
+    "rank": "Rank",
+    "name": "Name",
+    "price": "Price",
+    "marketCap": "Market Cap",
+    "change24h": "24h Change",
+    "buy": "Buy",
+    "details": "Details",
+    "circulating": "Circulating Supply",
+    "maxSupply": "Max Supply",
+    "totalSupply": "Total Supply"
+  },
+  "buy": {
+    "title": "Buy Cryptocurrency",
+    "selectCrypto": "Select Cryptocurrency",
+    "quantity": "Quantity",
+    "totalAmount": "Total Amount",
+    "buyButton": "Proceed to Payment",
+    "success": "Redirecting to payment...",
+    "error": "Failed to process purchase"
+  },
+  "settings": {
+    "title": "Settings",
+    "appearance": "Appearance",
+    "language": "Language",
+    "theme": "Theme",
+    "lightMode": "Light Mode",
+    "darkMode": "Dark Mode",
+    "systemMode": "System",
+    "notifications": "Notifications",
+    "emailNotifications": "Email Notifications",
+    "pushNotifications": "Push Notifications",
+    "priceAlerts": "Price Alerts",
+    "account": "Account",
+    "profile": "Profile",
+    "security": "Security",
+    "privacy": "Privacy"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Success!",
+    "cancel": "Cancel",
+    "save": "Save",
+    "search": "Search..."
+  }
+}
